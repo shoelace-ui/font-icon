@@ -1,0 +1,12 @@
+{
+  "name": "shoelace-ui-font-icon",
+  "version": "0.1.0",
+  "description": "Font-icon helper and defaults",
+  "repository": "https://github.com/shoelace-ui/font-icon.git",
+  "keywords": ["shoelace", "font", "font-icon"],
+  "author": "Michael Andrew Vanasse <mail@mndvns.com>",
+  "license": "MIT",
+  "dependencies": {
+    "stylus": "^0.49.1"
+  }
+}

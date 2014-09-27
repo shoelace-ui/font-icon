@@ -1,0 +1,43 @@
+/**
+ * Module dependencies
+ */
+
+@require './variables'
+@require './placeholders'
+
+/**
+ * Load `uri` function
+ */
+
+use('./encode.js')
+
+/**
+ * Create single icon class for `name` with `symbol`
+ * @param {String} name
+ * @param {String} symbol
+ * @mixin
+ */
+
+font-icon--content(name, symbol)
+  .{font-icon--prefix}-{name}
+    @extends $font-icon--placeholder
+    &:before
+      content: symbol
+
+/**
+ * Construct `@font-face` rule, substituting the src
+ * with its base64 data uri value
+ * @mixin
+ */
+
+font-icon--font-face()
+  @font-face
+    font-family: font-icon--font-family
+    src: uri(font-icon--path)
+    font-style: normal
+    font-weight: normal
+
+    {block}
+
+  for key, val in font-icon--icons
+    font-icon--content(key, val)
